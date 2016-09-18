@@ -43,7 +43,7 @@ class TodoListCell extends Component {
 
       return (
         <TouchableOpacity style={[styles.editbutton,cs.smallButton]} onPress={this._deleteInfo.bind(this)}>
-          <Text style={[ cs.font11, cs.mediumFont]}>
+          <Text style={[ cs.font13, cs.mediumFont]}>
             x
           </Text>
         </TouchableOpacity>
@@ -53,7 +53,7 @@ class TodoListCell extends Component {
       let picPath = this.state.undo ? TODOIMAGE.undo : TODOIMAGE.did;
       return (
         <TouchableOpacity onPress={this._onPressButton.bind(this)}>
-          <Image style={{width: 20, height: 20}} source={picPath}/>
+          <Image style={{width: 28, height: 28}} source={picPath}/>
         </TouchableOpacity>
       );
     }
@@ -64,7 +64,7 @@ class TodoListCell extends Component {
     let button = this._drawButton();
 		return(
 			<View style={styles.container}>
-				<Text style={[textStyle, cs.font14, cs.normalFont]}>{this.props.text}</Text>
+				<Text style={[textStyle, cs.font13, cs.normalFont]}>{this.props.text}</Text>
         {button}
 			</View>
 		);
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		marginBottom: 20,
+    marginTop: 5,
 		alignItems: 'center'
 	},
 

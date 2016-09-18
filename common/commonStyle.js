@@ -26,30 +26,37 @@ const commonStyles = StyleSheet.create({
   font14: {
     fontSize: 14,
   },
-  font22: {
-    fontSize: 22,
+  font23: {
+    fontSize: 23,
+  },
+  font24: {
+    fontSize: 24,
+  },
+  font25: {
+    fontSize: 25,
   },
 
+
   smallButton: {
-    width: 20,
-    height: 20,
-    borderRadius: 20,
+    width: 28,
+    height: 28,
+    borderRadius: 14,
     borderColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center'
   },
   normalButton: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
     borderColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center'
   },
   bigButton: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 70,
+    height: 70,
+    borderRadius: 35,
     borderColor: 'gray',
     alignItems: 'center',
     justifyContent: 'center'

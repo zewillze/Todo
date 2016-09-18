@@ -46,6 +46,6 @@ class App extends Component {
   }
 
 }
- 
+
 
 AppRegistry.registerComponent('Todo', () => App);

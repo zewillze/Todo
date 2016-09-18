@@ -1,3 +1,4 @@
+'use strict'
 import React, { Component } from 'react';
 import TodoListCell from './todoList';
 import AddTodo from './addTodo';
@@ -53,16 +54,16 @@ class DateBox extends Component {
 
 				<View style={styles.dateBoxLeft}>
 					<View style={styles.dateBoxLeftContainer}>
-						<Text style={[styles.dateColor, styles.day, cs.font22, cs.mediumFont]}>
+						<Text style={[styles.dateColor, styles.day, cs.font25, cs.mediumFont]}>
 						 {day}
 						</Text>
 
 						<View>
-							<Text style={[styles.dateColor, styles.mon, cs.font8, cs.mediumFont]}>
+							<Text style={[styles.dateColor, styles.mon, cs.font10, cs.mediumFont]}>
 								 {mon}
 							</Text>
 
-							<Text style={[styles.dateColor, styles.year, cs.font8, cs.normalFont]}>
+							<Text style={[styles.dateColor, styles.year, cs.font10, cs.normalFont]}>
 								 {year}
 							</Text>
 						</View>
@@ -70,7 +71,7 @@ class DateBox extends Component {
 				</View>
 
 				<View style={[styles.dateBoxRight]}>
-					<Text style={[styles.dateColor, cs.mediumFont, cs.font10]}>
+					<Text style={[styles.dateColor, cs.mediumFont, cs.font12]}>
 						{week}
 					</Text>
 				</View>
@@ -145,10 +146,14 @@ class Todo extends Component {
   render() {
     var infoCells = [];
     var idx = 0;
-    for (let value of this.state.infos){
-      infoCells.push(this._renderTodoCell(value, idx));
-      idx ++;
+    let infos = this.state.infos;
+    if (infos !== null) {
+      for (const value of infos){
+        infoCells.push(this._renderTodoCell(value, idx));
+        idx ++;
+      }
     }
+
 
     return (
 			<View style={styles.container}>
@@ -156,13 +161,13 @@ class Todo extends Component {
 
 				<View style={styles.todoList}>
 					<ScrollView showsVerticalScrollIndicator={false} >
-			       {infoCells}
+			       {idx === 0? null: infoCells }
 					</ScrollView>
 				</View>
 
 				<View style={styles.plusContainer}>
   					<TouchableOpacity style={styles.plusButton} onPress={this._plusButtonPress}>
-  					       <Image style={{width: 40, height: 40}}source={require('../images/plus.png')}/>
+               <Image style={{width: 50, height: 50}} source={require("../images/plus.png")}/>
   				  </TouchableOpacity>
 
             <TouchableOpacity  style={[styles.editbutton,cs.normalButton]} onPress={this._edit}>
@@ -230,14 +235,13 @@ const styles = StyleSheet.create({
      justifyContent: 'space-between',
      alignSelf: 'center'
   },
-  plusButton: {
-  	width: 40,
-  },
+ 
   editbutton: {
     backgroundColor: 'beige'
   },
   editText :{
-    color: 'gray'
+    color: 'gray',
+
   },
 });
 
